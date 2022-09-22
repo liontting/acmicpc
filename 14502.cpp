@@ -17,7 +17,7 @@ void count() {
 	maxnum = max(maxnum, result);
 }
 
-void dfs() {
+void bfs() {
 	for (int i = 0; i < N; i++)
 		for (int j = 0; j < M; j++)
 			if (realmapp[i][j] == 2)
@@ -53,7 +53,7 @@ void select_wall(int n) {
 				realmapp[i][j] = mapp[i][j];
 		for (int i = 0; i < 3; i++)
 			realmapp[selected[i].first][selected[i].second] = 1;
-		dfs();
+		bfs();
 		return;
 	}
 
