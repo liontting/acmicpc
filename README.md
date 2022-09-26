@@ -25,7 +25,7 @@ void bfs(int start) {
 void dfs(int x) {
 	visited[x] = 1;
 	for (int i: graph[x])
-		if (!visited[i])
+		if (!visited[i] && ... )
 			dfs(i);
 }
 
@@ -36,7 +36,11 @@ void dfs(int x) {
 
 ``` c++
 void dijkstra() {
-	for (int i = 1; i <= N; i++)
+	for (int i = 0; i < E; i++) {
+		cin >> a >> b >> e;
+		graph[a].push_back(make_pair(b, e));
+	}
+	for (int i = 1; i <= V; i++)
 		dist[i] = INF;
 	priority_queue<pair <int, int> > pq;
 	dist[1] = 0; // 1번부터 각 노드
