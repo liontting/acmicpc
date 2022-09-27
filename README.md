@@ -49,9 +49,11 @@ void dijkstra() {
 		int now = pq.top().second;
 		int nowdist = -pq.top().first;
 		pq.pop();
+		if (nowdist > dist[now]) // 의미 없는 경우 제거하여 최적화
+			continue;
 		for (int i = 0; i < graph[now].size(); i++) {
 			pair<int, int> next = graph[now][i];
-			if (dist[next.first] >= nowdist + next.second) {
+			if (dist[next.first] > nowdist + next.second) {
 				dist[next.first] = nowdist + next.second;
 				pq.push(make_pair(-dist[next.first], next.first));
 			}
