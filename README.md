@@ -32,7 +32,7 @@ void dfs(int x) {
 ```
 
 ### Dijkstra
-(14938)
+(14938, 11779)
 
 ``` c++
 void dijkstra() {
