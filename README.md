@@ -2,6 +2,7 @@
 Baekjoon Online Judge
 
 ### Breadth First Search
+
 ``` c++
 void bfs(int start) {
 	queue <int> q;
@@ -58,6 +59,41 @@ void dijkstra() {
 				pq.push(make_pair(-dist[next.first], next.first));
 			}
 		}
+	}
+}
+```
+
+### Tree traversal
+
+preorder: root -> left -> right
+``` c++
+void pre(root* temp) {
+	if (temp) {
+		cout << temp->data;
+		pre(temp->left);
+		pre(temp->right);
+	}
+}
+```
+
+inorder: left -> root -> right
+``` c++
+void in(root* temp) {
+	if (temp) {
+		in(temp->left);
+		cout << temp->data;
+		in(temp->right);
+	}
+}
+```
+
+postorder: left -> right -> root
+``` c++
+void post(root* temp) {
+	if (temp) {
+		post(temp->left);
+		post(temp->right);
+		cout << temp->data;
 	}
 }
 ```
