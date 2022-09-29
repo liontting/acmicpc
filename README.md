@@ -67,32 +67,32 @@ void dijkstra() {
 
 preorder: root -> left -> right
 ``` c++
-void pre(root* temp) {
+void preorder(root* temp) {
 	if (temp) {
 		cout << temp->data;
-		pre(temp->left);
-		pre(temp->right);
+		preorder(temp->left);
+		preorder(temp->right);
 	}
 }
 ```
 
 inorder: left -> root -> right
 ``` c++
-void in(root* temp) {
+void inorder(root* temp) {
 	if (temp) {
-		in(temp->left);
+		inorder(temp->left);
 		cout << temp->data;
-		in(temp->right);
+		inorder(temp->right);
 	}
 }
 ```
 
 postorder: left -> right -> root
 ``` c++
-void post(root* temp) {
+void postorder(root* temp) {
 	if (temp) {
-		post(temp->left);
-		post(temp->right);
+		postorder(temp->left);
+		postorder(temp->right);
 		cout << temp->data;
 	}
 }
