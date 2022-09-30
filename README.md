@@ -120,7 +120,7 @@ long long inverse(long long a, long long n) {
 ### Fibonacci numbers
 ##### d'Ocagne's identity
 F(m + n) = F(m - 1) * F(n) + F(m) * F(n + 1)  
-(11444)
+(11444, 15624)
 
 ``` c++
 long long int fibonacci(long long int num) {
