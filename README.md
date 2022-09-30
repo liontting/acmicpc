@@ -138,9 +138,9 @@ long long int fibonacci(long long int num) {
 			return mem[num];
 		}
 		else {
-			long long int a = fibonacci(num / 2 + 1);
-			long long int b = fibonacci(num / 2);
-			mem[num] = (a*a) + (b*b);
+			long long int a = fibonacci(num / 2);
+			long long int b = fibonacci(num / 2 + 1);
+			mem[num] = (a * a) + (b * b);
 			return mem[num];
 		}
 	}
