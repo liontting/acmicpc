@@ -98,8 +98,8 @@ void postorder(root* temp) {
 }
 ```
 
-### modular inverse
-Fermat's little Theorem
+### Modular inverse
+##### Fermat's little Theorem
 (13172, 11401)
 
 ``` c++
@@ -112,5 +112,37 @@ long long inverse(long long a, long long n) {
 		n /= 2;
 	}
 	return r;
+}
+```
+
+### Fibonacci numbers
+##### d'Ocagne's identity
+F(m + n) = F(m - 1) * F(n) + F(m) * F(n + 1)  
+(11444)
+
+``` c++
+long long int fibonacci(long long int num) {
+	if (num == 0)
+		return 0;
+	else if (num == 1)
+		return (mem[1] = 1);
+	else if (num == 2)
+		return (mem[2] = 1);
+	else if (mem[num])
+		return mem[num];
+	else {
+		if (num % 2 == 0) {
+			long long int a = fibonacci(num / 2 - 1);
+			long long int b = fibonacci(num / 2);
+			mem[num] = (a * b) + (b * (a + b));
+			return mem[num];
+		}
+		else {
+			long long int a = fibonacci(num / 2 + 1);
+			long long int b = fibonacci(num / 2);
+			mem[num] = (a*a) + (b*b);
+			return mem[num];
+		}
+	}
 }
 ```
