@@ -113,6 +113,8 @@ long long inverse(long long a, long long n) {
 	}
 	return r;
 }
+// inverse(A, N - 2);
+// A의 (N - 1)승을 N으로 나눈 나머지는 1 -> A의 (N - 2)승을 N으로 나눈 나머지는 1/A
 ```
 
 ### Fibonacci numbers
