@@ -148,3 +148,16 @@ long long int fibonacci(long long int num) {
 	}
 }
 ```
+
+### Shoelace formula
+(2166)
+
+``` c++
+	for (int i = 0; i < N; i++)
+		cin >> x[i] >> y[i];
+	x[N] = x[0];
+	y[N] = y[0];
+	for (int i = 0; i < N; i++)
+		answer += (x[i] * y[i + 1]) - (x[i + 1] * y[i]);
+	answer = abs(answer) / 2; // answer, x, y의 type은 double
+```
