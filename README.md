@@ -2,7 +2,7 @@
 Baekjoon Online Judge
 
 ### Binary Search
-(2467)
+(2467, 2110)
 
 ``` c++
 int binary_search(int* arr, int target) {
