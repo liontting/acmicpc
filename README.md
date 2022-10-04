@@ -82,6 +82,45 @@ void dijkstra() {
 }
 ```
 
+### Minimum Spanning Tree (MST)
+##### Kruskal's Algorithm
+(1647)
+``` c++
+int find(int x) {
+	if (root[x] == x)
+		return x;
+	else
+		return root[x] = find(root[x]);
+}
+
+void uni(int x, int y) {
+	if (find(x) != find(y))
+		root[find(x)] = find(y);
+}
+// Union-Find (Disjoint Set) 그대로 사용
+
+void kruskal() {
+	for (int i = 0; i < N; i++)
+		root[i] = i;
+	for (int i = 0; i < M; i++) {
+		int A, B, C;
+		cin >> A >> B >> C;
+		pq.push(make_pair(-C, make_pair(A, B)));
+	}
+	priority_queue<pair<int, pair<int, int>>> pq;
+	while (!pq.empty()) {
+		int c = -pq.top().first;
+		int a = pq.top().second.first;
+		int b = pq.top().second.second;
+		if (find(a) != find(b)) {
+			uni(a, b);
+			answer += c;
+		}
+		pq.pop();
+	}
+}
+```
+
 ### Tree traversal
 
 preorder: root -> left -> right
