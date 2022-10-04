@@ -1,10 +1,11 @@
 #include <iostream>
-#include <vector>
 #include <queue>
+#include <math.h>
 using namespace std;
-int N, M, root[100010], answer;
-priority_queue<pair<int, pair<int, int>>> pq;
-vector <int> cost;
+int n, root[110];
+double answer;
+pair<double, double> star[110];
+priority_queue<pair<double, pair<int, int>>> pq;
 
 int find(int x) {
 	if (root[x] == x)
@@ -22,26 +23,31 @@ int main() {
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
 	cout.tie(NULL);
-	cin >> N >> M;
-	for (int i = 1; i <= N; i++)
+	cin >> n;
+	for (int i = 0; i < n; i++) {
+		double x, y;
+		cin >> x >> y;
+		star[i].first = x;
+		star[i].second = y;
+		for (int j = 0; j < i; j++) {
+			double c;
+			c = sqrt(pow((star[i].first - star[j].first), 2) + pow((star[i].second - star[j].second), 2));
+			pq.push(make_pair(-c, make_pair(i, j)));
+		}
 		root[i] = i;
-	for (int i = 0; i < M; i++) {
-		int A, B, C;
-		cin >> A >> B >> C;
-		pq.push(make_pair(-C, make_pair(A, B)));
 	}
 	while (!pq.empty()) {
-		int c = -pq.top().first;
+		double c = -pq.top().first;
 		int a = pq.top().second.first;
 		int b = pq.top().second.second;
 		if (find(a) != find(b)) {
 			uni(a, b);
 			answer += c;
-			cost.push_back(c);
 		}
 		pq.pop();
 	}
-	answer -= cost[N - 2];
+	cout << fixed;
+	cout.precision(2);
 	cout << answer;
 	return 0;
 }
