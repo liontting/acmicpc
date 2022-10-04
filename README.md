@@ -84,7 +84,7 @@ void dijkstra() {
 
 ### Minimum Spanning Tree (MST)
 ##### Kruskal's Algorithm
-(1647, 4386, 2887, 6497, 14621, 1774, 16398)
+(1647, 4386, 2887, 6497, 14621, 1774, 16398, 10423)
 ``` c++
 int find(int x) {
 	if (root[x] == x)
