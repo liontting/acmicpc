@@ -39,7 +39,7 @@ void bfs(int start) {
 ```
 
 ### Depth First Search
-(2638)
+(2638, 1987)
 
 ``` c++
 void dfs(int x) {
