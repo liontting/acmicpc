@@ -207,6 +207,21 @@ long long int fibonacci(long long int num) {
 }
 ```
 
+### Palindrome
+(10942)
+
+``` c++
+int palindrome(int s, int e) { // s부터 e의 값이 palindrome인지 dp로 풀이
+	if (s > e)
+		return 1;
+	if (dp[s][e] != -1)
+		return dp[s][e];
+	if (num[s] != num[e])
+		return dp[s][e] = 0;
+	return dp[s + 1][e - 1] = palindrome(s + 1, e - 1);
+}
+```
+
 ### Shoelace formula
 (2166)
 
