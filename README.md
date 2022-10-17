@@ -85,6 +85,7 @@ void dijkstra() {
 ### Minimum Spanning Tree (MST)
 ##### Kruskal's Algorithm
 (1647, 4386, 2887, 6497, 14621, 1774, 16398, 10423)
+
 ``` c++
 int find(int x) {
 	if (root[x] == x)
@@ -117,6 +118,29 @@ void kruskal() {
 			answer += c;
 		}
 		pq.pop();
+	}
+}
+```
+
+### Topological Sort
+(1005)
+
+``` c++
+void topological_sort() {
+	queue<int> q;
+	for (int i = 1; i <= N; i++)
+		if (indegree[i] == 0)
+			q.push(i);
+	for (int i = 1; i <= N; i++) {
+		int cur = q.front();
+		q.pop();
+		answer[i] = cur;
+		for (int i = 0; i < (int)v[cur].size(); i++) {
+			int next = v[cur][i];
+			indegree[next]--;
+			if (indegree[next] == 0)
+				q.push(next);
+		}
 	}
 }
 ```
