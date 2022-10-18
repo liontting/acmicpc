@@ -258,3 +258,17 @@ int palindrome(int s, int e) { // s부터 e의 값이 palindrome인지 dp로 풀
 		answer += (x[i] * y[i + 1]) - (x[i + 1] * y[i]);
 	answer = abs(answer) / 2; // answer, x, y의 type은 double
 ```
+
+### Sieve of Eratosthenes
+(1644)
+
+``` c++
+void eratosthenes() {
+	for (int i = 2; i <= N; i++)
+		prime[i] = true;
+	for (int i = 2; i * i <= N; i++)
+		if (prime[i])
+			for (int j = i * i; j <= N; j += i)
+				prime[j] = false;
+}
+```
