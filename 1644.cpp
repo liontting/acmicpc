@@ -5,6 +5,15 @@ int N, answer;
 bool prime[4000010];
 vector<int> v;
 
+void eratosthenes() {
+	for (int i = 2; i <= N; i++)
+		prime[i] = true;
+	for (int i = 2; i * i <= N; i++)
+		if (prime[i])
+			for (int j = i * i; j <= N; j += i)
+				prime[j] = false;
+}
+
 int main() {
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
