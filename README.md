@@ -145,8 +145,8 @@ void topological_sort() {
 }
 ```
 
-### KnapSack Problem
-##### 0-1 KnapSack Problem
+### Knapsack Problem
+##### 0-1 Knapsack Problem
 (7579)
 
 ``` c++
