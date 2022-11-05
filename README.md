@@ -145,6 +145,27 @@ void topological_sort() {
 }
 ```
 
+### KnapSack Problem
+##### 0-1 KnapSack Problem
+(7579)
+
+``` c++
+void knapsack() {
+	for (int i = 1; i <= N; i++)
+		cin >> W[i];
+	for (int i = 1; i <= N; i++)
+		cin >> V[i];
+	for (int i = 1; i <= N; i++) {
+		for (int j = 1; j <= K; j++) {
+			if (j >= W[i])
+				DP[i % 2][j] = max(DP[(i - 1) % 2][j], DP[(i - 1) % 2][j - W[i]] + V[i]);
+			else
+				DP[i % 2][j] = DP[(i - 1) % 2][j];
+		}
+	}
+}
+```
+
 ### Tree traversal
 
 preorder: root -> left -> right
