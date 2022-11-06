@@ -147,7 +147,7 @@ void topological_sort() {
 
 ### Knapsack Problem
 ##### 0-1 Knapsack Problem
-(7579)
+(7579, 1106)
 
 ``` c++
 void knapsack() {
