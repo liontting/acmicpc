@@ -1,6 +1,4 @@
 ﻿#include <iostream>
-#include <algorithm>
-#include <math.h>
 using namespace std;
 int num, swit[110], student;
 

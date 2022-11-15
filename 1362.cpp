@@ -2,6 +2,7 @@
 using namespace std;
 int o, w, n, scenario;
 char m;
+
 int main() {
 	while (1) {
 		int check = 0;
