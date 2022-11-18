@@ -268,7 +268,7 @@ int palindrome(int s, int e) { // s부터 e의 값이 palindrome인지 dp로 풀
 ```
 
 ### Shoelace formula
-(2166)
+(2166, 11758)
 
 ``` c++
 	for (int i = 0; i < N; i++)
