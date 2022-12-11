@@ -20,7 +20,7 @@ int main() {
 	for (int i = 1; i <= N; i++)
 		if (!indegree[i])
 			q.push(i);
-	for (int i = 1; i <= N; i++) {
+	while (!q.empty()) {
 		int cur = q.front();
 		q.pop();
 		cout << cur << " ";
