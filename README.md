@@ -131,10 +131,10 @@ void topological_sort() {
 	for (int i = 1; i <= N; i++)
 		if (indegree[i] == 0)
 			q.push(i);
-	for (int i = 1; i <= N; i++) {
+	while(!q.empty()) {
 		int cur = q.front();
 		q.pop();
-		answer[i] = cur;
+		answer.push_back(cur);
 		for (int i = 0; i < (int)v[cur].size(); i++) {
 			int next = v[cur][i];
 			indegree[next]--;
