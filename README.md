@@ -131,7 +131,7 @@ void topological_sort() {
 	for (int i = 1; i <= N; i++)
 		if (indegree[i] == 0)
 			q.push(i);
-	while(!q.empty()) {
+	while (!q.empty()) {
 		int cur = q.front();
 		q.pop();
 		answer.push_back(cur);
