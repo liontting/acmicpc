@@ -123,7 +123,7 @@ void kruskal() {
 ```
 
 ### Topological Sort
-(1005, 2252, 2623)
+(1005, 2252, 2623, 1766)
 
 ``` c++
 void topological_sort() {
