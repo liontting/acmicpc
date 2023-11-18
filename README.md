@@ -304,3 +304,29 @@ int combination(int n, int r) {
 		return combination(n - 1, r - 1) + combination(n - 1, r);
 }
 ```
+
+### Monotone Stack
+(6198, 17298)
+
+``` c++
+int monotone_stack(int* A) {
+	int answer = 0;
+	stack<int> s;
+	for (int i = 0; i < N; i++) {
+		while (!s.empty() && s.top() <= A[i])
+			s.pop();
+		answer += s.size();
+		s.push(A[i]);
+	}
+	/* 이런 식의 응용도 가능
+	for (int i = 0; i < N; i++) {
+		while (!s.empty() && A[s.top()] < A[i]) {
+			answer[s.top()] = A[i];
+			s.pop();
+		}
+		s.push(i);
+	}
+	*/
+	return answer;
+}
+```
