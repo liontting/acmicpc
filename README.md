@@ -82,6 +82,35 @@ void dijkstra() {
 }
 ```
 
+### Bellman-Ford
+(11657)
+
+``` c++
+void bellman_ford() {
+	for (int i = 0; i < E; i++) {
+		cin >> a >> b >> e;
+		graph[a].push_back(make_pair(b, e));
+	}
+	for (int i = 1; i <= V; i++)
+		dist[i] = INF;
+	dist[1] = 0;
+	for (int i = 1; i <= V; i++) {
+		for (int j = 1; j <= V; j++) {
+			for (auto iter = graph[j].begin(); iter != graph[j].end(); iter++) {
+				int next = iter->first;
+				int weight = iter->second;
+				if (dist[j] != INF && dist[next] > dist[j] + weight) {
+				// 현재 간선을 거쳐서 다른 노드로 이동하는 거리가 짧은 경우
+					dist[next] = dist[j] + weight;
+					if (i == N)
+						cycle = 1;
+				}
+			}
+		}
+	}
+}
+```
+
 ### Minimum Spanning Tree (MST)
 ##### Kruskal's Algorithm
 (1647, 4386, 2887, 6497, 14621, 1774, 16398, 10423)
