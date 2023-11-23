@@ -102,7 +102,7 @@ void bellman_ford() {
 				if (dist[j] != INF && dist[next] > dist[j] + weight) {
 				// 현재 간선을 거쳐서 다른 노드로 이동하는 거리가 짧은 경우
 					dist[next] = dist[j] + weight;
-					if (i == N)
+					if (i == V)
 						cycle = 1;
 				}
 			}
