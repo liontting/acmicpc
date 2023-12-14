@@ -130,6 +130,7 @@ void uni(int x, int y) {
 // Union-Find (Disjoint Set) 그대로 사용
 
 void kruskal() {
+	priority_queue<pair<int, pair<int, int>>> pq;
 	for (int i = 0; i < N; i++)
 		root[i] = i;
 	for (int i = 0; i < M; i++) {
@@ -137,7 +138,6 @@ void kruskal() {
 		cin >> A >> B >> C;
 		pq.push(make_pair(-C, make_pair(A, B)));
 	}
-	priority_queue<pair<int, pair<int, int>>> pq;
 	while (!pq.empty()) {
 		int c = -pq.top().first;
 		int a = pq.top().second.first;
