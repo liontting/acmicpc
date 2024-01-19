@@ -10,8 +10,8 @@ void dfs(int x, int y) {
 		int xx = x + dx[i], yy = y + dy[i];
 		if (xx >= 0 && xx < M && yy >= 0 && yy < N) {
 			if (!paper[xx][yy]) {
-				paper[xx][yy] = 1;
 				num++;
+				paper[xx][yy] = 1;
 				dfs(xx, yy);
 			}
 		}
@@ -33,8 +33,8 @@ int main() {
 	for (int i = 0; i < M; i++) {
 		for (int j = 0; j < N; j++) {
 			if (!paper[i][j]) {
-				num = 1;
 				answer++;
+				num = 1;
 				paper[i][j] = 1;
 				dfs(i, j);
 				pq.push(-num);
