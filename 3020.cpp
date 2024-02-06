@@ -14,8 +14,6 @@ int main() {
 	sort(obstacle2, obstacle2 + N / 2);
 	int now = N / 2, left = 0, right = N / 2 - 1;
 	for (int i = 0; i < H; i++) {
-		minnum = min(minnum, now);
-		answer[now]++;
 		while (i + 0.5 > obstacle1[left] && left <= N / 2 - 1) {
 			left++;
 			now--;
@@ -24,6 +22,8 @@ int main() {
 			right--;
 			now++;
 		}
+		minnum = min(minnum, now);
+		answer[now]++;
 	}
 	cout << minnum << " " << answer[minnum];
 	return 0;
