@@ -1,7 +1,7 @@
 #include <iostream>
 #include <algorithm>
 using namespace std;
-int N, dp[8][8][8], answer;
+int N, answer;
 pair<int, int> egg[10];
 
 void bt(int n) {
